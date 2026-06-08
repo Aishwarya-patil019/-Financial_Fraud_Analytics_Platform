@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 # Dataset path
-DATA_PATH = "/workspaces/-Financial_Fraud_Analytics_Platform/Fraud Detection Dataset.csv"
+DATA_PATH = "/workspaces/-Financial_Fraud_Analytics_Platform/data/Fraud Detection Dataset.csv"
 
 # Load dataset
 print("Loading dataset...")
