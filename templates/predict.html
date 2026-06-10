@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fraud Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Financial Fraud Analytics Platform</h1>
+    <h2>Fraud Prediction System</h2>
+
+    <form action="/predict" method="POST">
+
+        <label>Transaction Amount</label>
+        <input type="number" name="amount" step="0.01" required>
+
+        <label>Transaction Type</label>
+        <select name="transaction_type">
+            <option value="0">ATM Withdrawal</option>
+            <option value="1">POS Payment</option>
+            <option value="2">Bill Payment</option>
+            <option value="3">Online Purchase</option>
+        </select>
+
+        <label>Account Age (Days)</label>
+        <input type="number" name="account_age" required>
+
+        <label>Previous Fraudulent Transactions</label>
+        <input type="number" name="previous_fraud" required>
+
+        <label>Transactions in Last 24 Hours</label>
+        <input type="number" name="transactions_24h" required>
+
+        <button type="submit">Predict Fraud</button>
+
+    </form>
+
+    {% if result %}
+        <div class="result">
+            <h3>{{ result }}</h3>
+        </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
